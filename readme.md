@@ -35,6 +35,7 @@ python3 generate_drive_token.py
 parent_id = "1ndsjbfdbjh3332" 
 ```
 - Folder id is the string after https://drive.google.com/drive/folders/ in the drive link.
+- This is the folder where the copied files are stored.
 - Set the value for line 24 to **True** or **False** for your case. Do not put quotation mark around these values
 
 ### Running the code
