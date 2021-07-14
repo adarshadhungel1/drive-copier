@@ -37,7 +37,7 @@ def get_readable_file_size(size_in_bytes) -> str:
 
 class GoogleDriveHelper:
     def __init__(self, name=None, listener=None):
-        self.__G_DRIVE_TOKEN_FILE = os.join.path(os.getcwd(),'token.pickle')
+        self.__G_DRIVE_TOKEN_FILE = os.path.join(os.getcwd(),'token.pickle')
         # Check https://developers.google.com/drive/scopes for all available scopes
         self.__OAUTH_SCOPE = ['https://www.googleapis.com/auth/drive']
         self.__G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
