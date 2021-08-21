@@ -7,6 +7,7 @@ import re
 import json
 import requests
 import logging
+import sys
 
 from google.auth.transport.requests import Request
 from google.oauth2 import service_account
@@ -17,8 +18,16 @@ from googleapiclient.http import MediaFileUpload
 from tenacity import *
 
 
+file_handler = logging.FileHandler(filename='tmp.log')
+stdout_handler = logging.StreamHandler(sys.stdout)
+handlers = [file_handler, stdout_handler]
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='[%(asctime)s] {%(filename)s:%(lineno)d} %(levelname)s - %(message)s',
+    handlers=handlers
+)
 LOGGER = logging.getLogger(__name__)
-logging.getLogger('googleapiclient.discovery').setLevel(logging.ERROR)
 
 parent_id = "" #folder id of the destination , where the file is to be copied
 IS_TEAM_DRIVE =    #True or False
